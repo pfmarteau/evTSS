@@ -34,10 +34,15 @@ Each input file contains a sequence of symbols: each row of the input files cont
 ### Example: Groundtruth.txt
 
 3 0 45
+
 0 46 50
+
 5 51 101
+
 2 102 152
+
 4 153 203
+
 1 204 254
 
 // symbol 1 starts at time index 0 and ends at time index 50
