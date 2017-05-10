@@ -96,7 +96,7 @@ RelativeLatency (Sum_latency/nb_matchs, in #frames): 9.16667 <br />
 MeanMatchDuration: 35
 
 
-**Confusion Matrix**
+**Confusion Matrix** <br />
 1 0 0 1 0 0  <br />
 0 1 0 0 0 0  <br />
 0 0 1 0 1 0  <br />
