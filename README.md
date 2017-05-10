@@ -1,5 +1,5 @@
 # evTSS
-Pairwise Alignment of Time Stamped Sequences for assessing automatic labelling of stream data given a ground truth
+**Pairwise Alignment of Time Stamped Sequences for assessing automatic labelling of stream data given a ground truth**
 
 **evTSS** takes in input two file names (two Time Stamped Sequences (TSS)), the first one containing the timestamped ground truth labels and the second one the timestamped predicted labels. It provides as outputs some alignment assessment metrics, as detailed in <https://hal.archives-ouvertes.fr/hal-01403948v1>
 
