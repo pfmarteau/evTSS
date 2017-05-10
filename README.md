@@ -33,12 +33,12 @@ Each input file contains a sequence of symbols: each row of the input files cont
 
 ### Example: Groundtruth.txt
 
-[3 0 45]<br />
-[0 46 50]<br />
-[5 51 101]
-[2 102 152]
-[4 153 203]
-[1 204 254]
+3 0 45 <br />
+0 46 50 <br />
+5 51 101 <br />
+2 102 152 <br />
+4 153 203 <br />
+1 204 254 <br />
 
 // symbol 1 starts at time index 0 and ends at time index 50
 // symbol 3 starts at time index 51 and ends at time index 101
@@ -47,63 +47,62 @@ Each input file contains a sequence of symbols: each row of the input files cont
 
 ### Example: Predicted.txt
 
-0 0 30
-0 31 50
-0 51 88
-5 89 90
-0 91 95
-5 96 106
-2 107 152
-0 153 174
-2 175 195
-0 196 203
-1 204 254
+0 0 30 <br />
+0 31 50 <br />
+0 51 88 <br />
+5 89 90 <br />
+0 91 95 <br />
+5 96 106 <br />
+2 107 152 <br />
+0 153 174 <br />
+2 175 195 <br />
+0 196 203 <br />
+1 204 254 <br />
 
-// Nothing is detected on time segment [0-20]
-// symbol 6 starts at time index 21 and ends at time index 40
-// Nothing is detected on time segment [41-42] 
-// symbol 6 starts at time index 43 and ends at time index 47
-...
-// symbol 5 starts at time index 270 and ends at time index 305
+// Nothing is detected on time segment [0-20] <br />
+// symbol 6 starts at time index 21 and ends at time index 40 <br />
+// Nothing is detected on time segment [41-42]  <br />
+// symbol 6 starts at time index 43 and ends at time index 47 <br />
+... <br />
+// symbol 5 starts at time index 270 and ends at time index 305 <br />
 
 ## The program outputs the following trace and evaluation metrics 
 **GROUND TRUTH	PREDICTION		EVENTS**
-5 (1|204-254)			10 (1|204-254)	*correct match type-1*
-4 (4|153-203)			9 (0|196-203)	 	*suppress NL in pred type-3 *
-4 (4|153-203)			8 (2|175-195)	 	*mismatch (1 FP and 1 FN) type-1*
-3 (2|102-152)			7 (0|153-174)	 	*suppress NL in pred type-3 *
-3 (2|102-152)			6 (2|107-152)		*correct match type-1*
-2 (5|51-101)			5 (5|96-106)	 	*correct match type-1*
-1 (0|46-50)			4 (0|91-95)	 	*suppress NL in pred type-3 *
-1 (0|46-50)			3 (5|89-90)	 	*suppress in pred (FP) type-3*
-1 (0|46-50)			2 (0|51-88)	 	*suppress NL in pred type-3* 
-1 (0|46-50)			1 (0|31-50)	 	*NL match type-1*
-0 (3|0-45)			0 (0|0-30)	 	*suppress in GT (FN) type-2*
-0 (3|0-45)			0 (0|0-30)	 	*suppress NL in pred type-3* 
+5 (1|204-254)			10 (1|204-254)	*correct match type-1* <br />
+4 (4|153-203)			9 (0|196-203)	 	*suppress NL in pred type-3 * <br />
+4 (4|153-203)			8 (2|175-195)	 	*mismatch (1 FP and 1 FN) type-1* <br />
+3 (2|102-152)			7 (0|153-174)	 	*suppress NL in pred type-3 * <br />
+3 (2|102-152)			6 (2|107-152)		*correct match type-1* <br />
+2 (5|51-101)			5 (5|96-106)	 	*correct match type-1* <br />
+1 (0|46-50)			4 (0|91-95)	 	*suppress NL in pred type-3 * <br />
+1 (0|46-50)			3 (5|89-90)	 	*suppress in pred (FP) type-3* <br />
+1 (0|46-50)			2 (0|51-88)	 	*suppress NL in pred type-3*  <br />
+1 (0|46-50)			1 (0|31-50)	 	*NL match type-1* <br />
+0 (3|0-45)			0 (0|0-30)	 	*suppress in GT (FN) type-2* <br />
+0 (3|0-45)			0 (0|0-30)	 	*suppress NL in pred type-3*  <br />
 
-Macro Error Rate (N-sum_i(FPi+FNi))/N= 40 (%)
-Micro Average Precision avg(TPi/(TPi+FPi))= 80 (%)
-Micro Average Recall avg(TPi/(TPi+FNi))= 60 (%)
-Micro Average F1 avg(2*precision*recall/(precision+recall))= 68.5714 (%)
-Micro Average Accuracy avg((TPi+TNi)/(TPi+FPi+TNi+FNi))= 82 (%)
-Micro Average ErrorRate avg((FPi+FNi)/TPi+FPi+TNi+FNi))= 18 (%)
-Micro Average Sensitivity = Recall (TPi/(TPi+FNi))=60(%)
-Micro Average Specificity (TNi/(TNi+FPi))=88.3333(%)
-Micro Average 1 - Specificity (1 - TNi/(TNi+FPi))=11.6667(%)
-AlignmentScore (edition cost): 4.00909
-RelativeAlignmentScore (alignment_score/length_GT): 0.668182
-RelativeLatency (Sum_latency/nb_matchs, in #frames): 9.16667
+Macro Error Rate (N-sum_i(FPi+FNi))/N= 40 (%) <br />
+Micro Average Precision avg(TPi/(TPi+FPi))= 80 (%) <br />
+Micro Average Recall avg(TPi/(TPi+FNi))= 60 (%) <br />
+Micro Average F1 avg(2*precision*recall/(precision+recall))= 68.5714 (%) <br />
+Micro Average Accuracy avg((TPi+TNi)/(TPi+FPi+TNi+FNi))= 82 (%) <br />
+Micro Average ErrorRate avg((FPi+FNi)/TPi+FPi+TNi+FNi))= 18 (%) <br />
+Micro Average Sensitivity = Recall (TPi/(TPi+FNi))=60(%) <br />
+Micro Average Specificity (TNi/(TNi+FPi))=88.3333(%) <br />
+Micro Average 1 - Specificity (1 - TNi/(TNi+FPi))=11.6667(%) <br />
+AlignmentScore (edition cost): 4.00909 <br />
+RelativeAlignmentScore (alignment_score/length_GT): 0.668182 <br />
+RelativeLatency (Sum_latency/nb_matchs, in #frames): 9.16667 <br />
 MeanMatchDuration: 35
 
 
-
 **Confusion Matrix**
-1 0 0 1 0 0 
-0 1 0 0 0 0 
-0 0 1 0 1 0 
-0 0 0 0 0 0 
-0 0 0 0 0 0 
-1 0 0 0 0 1 
+1 0 0 1 0 0  <br />
+0 1 0 0 0 0  <br />
+0 0 1 0 1 0  <br />
+0 0 0 0 0 0  <br />
+0 0 0 0 0 0  <br />
+1 0 0 0 0 1  <br />
 
 
 
