@@ -33,8 +33,8 @@ Each input file contains a sequence of symbols: each row of the input files cont
 
 ### Example: Groundtruth.txt
 
-[3 0 45]
-[0 46 50]
+[3 0 45]<br />
+[0 46 50]<br />
 [5 51 101]
 [2 102 152]
 [4 153 203]
